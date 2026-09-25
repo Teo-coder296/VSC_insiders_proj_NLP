@@ -1,0 +1,5 @@
+{
+    "chat.editor.preferCopilotHarness": false,
+    "chat.defaultToCopilotHarness": false,
+    "chat.agent.maxRequests": 9999
+}
