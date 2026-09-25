@@ -1,14 +1,37 @@
-# NLP Text Categorizer
+# VSC Insiders NLP Project
 
-This project contains a compact Python NLP workflow for classifying short text samples into categories such as `finance` and `sports`.
+A compact Python NLP text categorization project that reads labeled text samples, preprocesses them, trains a classifier, and predicts the category of new text using a repeatable and testable workflow.
 
-## Features
+## Overview
 
-- text normalization and tokenization
+This project demonstrates a simple machine learning pipeline for text classification using:
+
+- text normalization
+- tokenization
 - bag-of-words feature extraction
-- logistic regression classifier training
-- prediction for new text samples
-- pytest-based validation
+- logistic regression classification
+- automated validation with pytest
+
+## Project structure
+
+```text
+folder_gol/
+├── README.md
+├── main.py
+├── requirements.txt
+├── .gitignore
+├── src/
+│   ├── __init__.py
+│   ├── preprocess.py
+│   ├── features.py
+│   ├── train.py
+│   └── __init__.py
+├── tests/
+│   ├── test_preprocess.py
+│   ├── test_features.py
+│   └── test_model.py
+└── LICENSE
+```
 
 ## Run the example
 
@@ -19,5 +42,13 @@ python main.py
 ## Run tests
 
 ```bash
-pytest
+py -m pytest -q
 ```
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Author
+
+Teo-coder296
