@@ -32,3 +32,10 @@
 ## Services
 - Essential: `src.preprocess`, `src.features`, `src.train`
 - Enhancement: CLI wrapper and future API layer
+
+## Integration results
+- Validation completed against the actual project in this workspace.
+- `python -m pytest -q` passed: 5 tests passed.
+- `python main.py` executed successfully and printed the expected label: `finance`.
+- No frontend, API gateway, or relational database layer exists for this project, so the no-frontend/no-database integration path from the brief was the correct path.
+- No seed data or mock data layer was introduced. The project remains a CLI-based NLP worker with a verified local execution path.
