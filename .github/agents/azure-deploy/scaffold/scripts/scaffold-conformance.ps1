@@ -41,7 +41,7 @@ if (Test-Path $InfraPath) {
 
 $svcNames = @()
 if ($plan -and $plan.services) { $svcNames = @($plan.services | ForEach-Object { $_.name }) }
-function Has-Service($re) { return [bool]($svcNames | Where-Object { $_ -match $re }) }
+function Update-PlannedService($re) { return [bool]($svcNames | Where-Object { $_ -match $re }) }
 
 # 1. TAGS-NO-CAMEL — tag keys must be hyphenated, not Bicep camelCase identifiers.
 if ($mainBicep -match 'appOnboard(Skill|SessionId)|createdAt:|deployedBy:') {
@@ -111,8 +111,8 @@ if ($iac) {
 }
 
 # --- Managed database checks ---
-$hasMysql = Has-Service 'MySQL'
-$hasPg    = Has-Service 'PostgreSQL|Postgres'
+$hasMysql = Update-PlannedService 'MySQL'
+$hasPg    = Update-PlannedService 'PostgreSQL|Postgres'
 if (($hasMysql -or $hasPg) -and $iac) {
   # 4. DB-VERSION-MATCH — each server's version must equal its capabilities-verified plan value.
   #    Scope the match to the DB resource block so an unrelated 'version:' elsewhere isn't picked up.
